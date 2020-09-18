@@ -1,0 +1,16 @@
+﻿
+=========================psl DBContext====================
+Enable-Migrations -contextTypeName PSLContext -MigrationsDirectory Migrations\PSL
+
+add-migration -ConfigurationTypeName NewPSL.Migrations.PSL.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName NewPSL.Migrations.PSL.Configuration
+
+
+========================application DB Context===========
+
+Enable-Migrations -contextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity
+
+add-migration -ConfigurationTypeName NewPSL.Migrations.Identity.Configuration "InitialIdentity"
+
+update-database -ConfigurationTypeName NewPSL.Migrations.PSL.Configuration
